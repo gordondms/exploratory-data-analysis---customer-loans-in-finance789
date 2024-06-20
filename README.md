@@ -1,9 +1,23 @@
-# exploratory-data-analysis---customer-loans-in-finance789
+# Project Title: Exploratory-Data-Analysis---Customer-Loans-in-Finance789
 
-Project Title
-Table of Contents, if the README file is long
-A description of the project: what it does, the aim of the project, and what you learned
-Installation instructions
-Usage instructions
-File structure of the project
-License information
+## A description of the project: what it does, the aim of the project, and what you learned
+This project is focused on performing exploratory data analysis on a loan portfolio.  It utilises various statistical and data visualisation techniques to uncover patterns, relationships, and anomalies in the loan data.  The intention is to uncover information that will enable the business to make more informed decisions about loan approvals, pricing, and risk management. 
+
+The project starts with the development of a Python script that creates a class and associated methods to:
+- Load a dictionary from a local YAML file that contains the credentials to access an AWS RDS database
+- Access the AWS RDS database
+- Extract a table from that database as a dataframe
+- Save the table to a local CSV file
+- Load a dataframe from the local CSV file
+
+
+## Installation instructions
+## Usage instructions
+## File structure of the project
+
+### db_utils.py - This is the primary Python script file
+### load_data.csv - Local data file (saved from the Python script)
+### credentials.yaml - This is the YAML file that contains the credentials to access the AWS database
+### .gitignore - This file references the YAML file that contains the credentials to access the AWS database
+
+## License information
