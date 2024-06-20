@@ -1,7 +1,7 @@
-import yaml
-import psycopg2
 import pandas as pd
+import psycopg2
 from sqlalchemy import create_engine
+import yaml
 
 # Creating new class containing the methods to extract data from the RDS database
 
@@ -17,6 +17,10 @@ class RDSDatabaseConnector:
             return credentials
 
     def load_data(self):
+        '''
+        Loading data from AWS RDS utilising a SQLAlchemy engine.
+        Utilises credentials extracted from load_dict.
+        '''    
         database_type = 'postgresql'
         dbapi = 'psycopg2'
         endpoint = self.credentials['RDS_HOST']
@@ -30,21 +34,31 @@ class RDSDatabaseConnector:
 
     
     def extract_table(self):
+        '''
+        Extraction of data table from RDS database.
+        Data table is returned as a DataFrame
+        '''
         loan_df = pd.read_sql_query('SELECT * FROM loan_payments', con=engine)
         print(loan_df.head(10))
         return loan_df
     
     def save_table(self, loan_df, CSV_filename):
+        '''
+        DataFrame saved to local CSV file.
+        '''
         loan_df.to_csv(CSV_filename)
     
     def load_df(self, filename):
+        '''
+        Local CSV file being loaded as a Pandas DataFrame
+        '''
         loansfile_df = pd.read_csv(filename)
         loansfile_df.info()
         print(loansfile_df.shape)
         print(loansfile_df.head(10))
 
 
-# Function to load dictionary from AWS using credentials stored in a YML file
+# Function to load AWS credentials stored in a YAML file
 
 def load_dict(filename):
     with open(filename) as file:
