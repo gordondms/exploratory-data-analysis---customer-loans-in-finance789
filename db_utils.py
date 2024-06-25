@@ -39,7 +39,9 @@ class RDSDatabaseConnector:
         Data table is returned as a DataFrame
         '''
         loan_df = pd.read_sql_query('SELECT * FROM loan_payments', con=engine)
-        print(loan_df.head(10))
+        #print(loan_df.head(40))
+        pd.set_option('display.max_columns', None)
+        loan_df.head(40)
         return loan_df
     
     def save_table(self, loan_df, CSV_filename):
@@ -56,6 +58,8 @@ class RDSDatabaseConnector:
         loansfile_df.info()
         print(loansfile_df.shape)
         print(loansfile_df.head(10))
+
+   
 
 
 # Function to load AWS credentials stored in a YAML file
@@ -76,3 +80,6 @@ if __name__ == '__main__':
     loan_df = connection.extract_table()
     connection.save_table(loan_df, 'loan_data.csv')
     connection.load_df('loan_data.csv')
+
+print("percentage of missing values in each column:")
+print(loan_df.isna().mean() * 100)
