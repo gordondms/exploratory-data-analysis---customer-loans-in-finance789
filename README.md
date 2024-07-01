@@ -10,8 +10,23 @@ The project starts with the development of a Python script that creates a class 
 - Save the table to a local CSV file
 - Load a dataframe from the local CSV file
 
+The project then works though the fundamental steps in EDA:
+- Converting the columns to the correct format
+- Creating a class to get information from the DataFrame
+- Removing or imputing missing values in the data
+- Performing transformations on skewed columns
+- Removing outliers from the data
+- Dropping overly correlated columns
+
+Key learnings included:
+- Practical implementation of the theory that was covered in the lessons
+- Understanding the detailed code/syntax required for different steps
+- Reinforcing the value of creating reusable classes for key steps
+- Highlighting that it is not always a clear-cut decision regarding dropping data/columns or correlation
+
 
 ## Installation instructions
+
 ## Usage instructions
 
 ### The EDA.ipynb file provides all the information and key steps undertaken during this project. 
