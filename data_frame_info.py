@@ -8,37 +8,35 @@ class DataFrameInfo:
     def __init__(self, df):
         self.df = df
 
-    def df_column_info(self, df):
+    def df_column_info(self):
         '''
         Returns summary information about the dataset, including column names and data types
         '''
         return self.df.dtypes   
-        # return self.df.info()
     
-    def df_statistics(self, df):
+    def df_statistics(self):
         '''
         Returns a statistical summary of the dataset
         '''
         return self.df.describe()
 
-    def df_count_values():
+    def df_count_values(self):
         '''
         Returns a count of distinct values in each columns
         '''
         return self.df.nunique()
     
-    def df_shape():
+    def df_shape(self):
         '''
         Returns the dataframe shape (number of rows and columns)
         '''
         return self.df.shape
     
-    def df_null_count():
+    def df_null_count(self):
         '''
         Returns a percentage count of NULL values in each column
         '''
-        print("Percentage of NULL values in each column:")
-        self.df.isna().mean() * 100
+        return self.df.isna().mean() * 100
 
 
 

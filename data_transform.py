@@ -32,3 +32,17 @@ class DataTransform:
         self.df[column] = pd.Categorical(self.df[column])
         return self.df
     
+    def impute_mean(df, column):
+        ''''
+        Impute NULL values with the mean
+        '''
+        self.df[column] = self.df[column].fillna(self.df[column].mean())
+        return self.df
+
+    def impute_median(df, column):
+        ''''
+        Impute NULL values with the mean
+        '''
+        self.df[column] = self.df[column].fillna(self.df[column].median())
+        return self.df
+    
