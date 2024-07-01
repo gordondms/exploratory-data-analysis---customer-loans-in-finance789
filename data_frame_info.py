@@ -6,6 +6,12 @@ class DataFrameInfo:
     '''
 
     def __init__(self, df):
+        '''
+        Initialising the DataFrameInfo object
+        
+        Parameters:
+        - df (pd.DataFrame): The input DataFrame to be transformed.
+        '''
         self.df = df
 
     def df_column_info(self):

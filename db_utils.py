@@ -47,12 +47,22 @@ class RDSDatabaseConnector:
     def save_table(self, loan_df, CSV_filename):
         '''
         DataFrame saved to local CSV file.
+        
+        Parameters:
+        - loan_df: pandas.DataFrame
+        - CSV_Filename: Filename for CSV file
+
+        Returns:
+        - Saved CSV file
         '''
         loan_df.to_csv(CSV_filename)
     
     def load_df(self, filename):
         '''
         Local CSV file being loaded as a Pandas DataFrame
+        
+        Parameters:
+        - filename: Filename for CSV file
         '''
         loansfile_df = pd.read_csv(filename)
         loansfile_df.info()

@@ -4,8 +4,9 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import seaborn as sns
-from statsmodels.graphics.gofplots import qqplot
 from matplotlib import pyplot
+from statsmodels.graphics.gofplots import qqplot
+
 
 class Plotter:
     ''''
@@ -13,44 +14,78 @@ class Plotter:
     '''
 
     def __init__(self, df):
+        '''
+        Initialising the Plotter object
+        
+        Parameters:
+        - df: pandas.DataFrame: The input DataFrame to be transformed.
+        '''
         self.df = df
 
     def null_plot(df):
+        '''
+        Plotting null values
+        
+        Parameters:
+        - df: pandas.DataFrame
+
+        Returns:
+        - Missingno plot of NaN values
+        '''
         return msno.matrix(df)
 
     def measure_skew(df):
+        '''
+        Measuring skew
+
+        Parameters:
+        - df: pandas.DataFrame
+
+        Returns:
+        - Skew calculation
+        '''
         return df.skew(axis = 0, skipna = True, numeric_only = True)
     
     def skewed_columns(column_skew, threshold=1):
+        '''
+        Identifies skewed columns based on a defined threshold
+
+        Parameters:
+        - column_skew: List of column skew calculations (from measure_skew function)
+        - threshold: Defined threshold for skewness
+
+        Returns:
+        - List of skewed columns based on threshold
+        '''
         skewed_columns = column_skew[column_skew > threshold].index
         return skewed_columns
     
     def visualise_skews(df, skewed_columns):
+        '''
+        Visualises the most skewed columns in a QQ plot
+
+        Parameters:
+        - df: pandas.DataFrame
+        - skewed_columns: List of skewed columns (from skewed_columns function)
+
+        Returns:
+        - QQ plot
+        '''
         for column in skewed_columns:
             print(column)
             qq_plot = qqplot(df[column] , scale=1 ,line='q', fit=True)
             pyplot.show()
 
-    # def visualise_outliers_boxplot(df):
-    #     '''
-    #     Visualises outliers using a boxplot
-    #     '''
-    #     # Columns to plot
-    #     numeric_columns = df.select_dtypes(include=['number']).columns
-    #     # Create the figure and subplots
-    #     fig, axes = plt.subplots(ncols=len(numeric_columns))
-    #     # Create the boxplot with Seaborn
-    #     for column, axis in zip(numeric_columns, axes):
-    #         sns.boxplot(data=df[column], ax=axis) 
-    #         axis.set_title(column)
-    #         # axis.set(xticklabels=[], xticks=[], ylabel=column)
-    #         plt.tight_layout()
-    #         plt.show()
-    #     # Show the plot
     
     def visualise_outliers_boxplot(df):
         '''
         Visualises outliers using a boxplot
+
+        Parameters:
+        - df: pandas.DataFrame
+        
+        Returns:
+        - Boxplot
         '''
         # Columns to plot
         numeric_columns = df.select_dtypes(include=['number']).columns
@@ -65,6 +100,12 @@ class Plotter:
     def visualise_outliers_scatterplot(df):
         '''
         Visualises outliers using a scatter plot
+        
+        Parameters:
+        - df: pandas.DataFrame
+        
+        Returns:
+        - scatterplot
         '''
         numeric_columns = df.select_dtypes(include=['number']).columns
 
