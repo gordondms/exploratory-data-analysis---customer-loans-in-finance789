@@ -13,11 +13,19 @@ The project starts with the development of a Python script that creates a class 
 
 ## Installation instructions
 ## Usage instructions
+
+### The EDA.ipynb file provides all the information and key steps undertaken during this project. 
+
 ## File structure of the project
 
 ### db_utils.py - This is the primary Python script file
 ### load_data.csv - Local data file (saved from the Python script)
 ### credentials.yaml - This is the YAML file that contains the credentials to access the AWS database
 ### .gitignore - This file references the YAML file that contains the credentials to access the AWS database
+### data_frame_info.py - This contains a Class (DataFrameInfo) that extracts information, statistics and value counts from the DataFrame
+### data_transform.py - This contains a Class (DataTransform) that makes changes to the dataframe, including datatype and imputing mean/median values.
+### data_frame_transform.py - This contains a Class (DataFrameTransform) that performs EDA transformation on the data
+### plotter.py - This contains the Class (Plotter) that visualises insights from the dataset
+### EDA-ipynb - This Jupyter file provides an overview of the project and the key steps in terms of data extraction, data changes, transformations and visualistion.
 
 ## License information
