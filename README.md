@@ -23,24 +23,30 @@ Key learnings included:
 - Understanding the detailed code/syntax required for different steps
 - Reinforcing the value of creating reusable classes for key steps
 - Highlighting that it is not always a clear-cut decision regarding dropping data/columns or correlation
+- Different approaches to data analysis and visualisation
 
 
 ## Installation instructions
-
+N/A
 ## Usage instructions
 
-### The EDA.ipynb file provides all the information and key steps undertaken during this project. 
+### The EDA.ipynb file provides all the information and key steps undertaken during this project.
+### The Analysis.ipynb file provides a summary of the analysis steps undertaken 
 
 ## File structure of the project
 
-### db_utils.py - This is the primary Python script file
-### load_data.csv - Local data file (saved from the Python script)
-### credentials.yaml - This is the YAML file that contains the credentials to access the AWS database
-### .gitignore - This file references the YAML file that contains the credentials to access the AWS database
-### data_frame_info.py - This contains a Class (DataFrameInfo) that extracts information, statistics and value counts from the DataFrame
-### data_transform.py - This contains a Class (DataTransform) that makes changes to the dataframe, including datatype and imputing mean/median values.
-### data_frame_transform.py - This contains a Class (DataFrameTransform) that performs EDA transformation on the data
-### plotter.py - This contains the Class (Plotter) that visualises insights from the dataset
-### EDA-ipynb - This Jupyter file provides an overview of the project and the key steps in terms of data extraction, data changes, transformations and visualistion.
+The key files are:
+
+-  db_utils.py - This is the primary Python script file
+-  load_data.csv - Local data file (saved from the Python script)
+-  credentials.yaml - This is the YAML file that contains the credentials to access the AWS database
+-  .gitignore - This file references the YAML file that contains the credentials to access the AWS database
+-  data_frame_info.py - This contains a Class (DataFrameInfo) that extracts information, statistics and value counts from the DataFrame
+-  data_transform.py - This contains a Class (DataTransform) that makes changes to the dataframe, including datatype and imputing mean/median values.
+-  data_frame_transform.py - This contains a Class (DataFrameTransform) that performs EDA transformation on the data
+-  plotter.py - This contains the Class (Plotter) that visualises insights from the dataset
+-  EDA-ipynb - This Jupyter file provides an overview of the project and the key steps in terms of data extraction, data changes, transformations and visualisation
+-  Analysis.ipynb - This Jupyter file provides a summary of the analysis and visualisation of the loans data
 
 ## License information
+N/A
